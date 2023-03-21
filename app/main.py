@@ -33,7 +33,7 @@ platforms = {"hulu": hulu, "amazon": amazon,
              "disney": disney, "netflix": netflix}
 
 df_2 = pd.read_csv(get_url(
-    "https://drive.google.com/file/d/178YqsxvZfu9Alsv0upqgdnxtUFnGNUGr/view?usp=sharing"))
+    "https://drive.google.com/file/d/1mnibRptgg4cs8X0AyuNm7u8pZenMCrK8/view?usp=sharing"))
 
 
 # uno = pd.read_csv(get_url(
