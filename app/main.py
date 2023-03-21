@@ -41,18 +41,15 @@ cuatro = pd.read_csv(get_url(
     "https://drive.google.com/file/d/1GSTJ1hQY4MNLGVAvQfF7d9AZtuoRQSMC/view?usp=sharing"))
 cinco = pd.read_csv(get_url(
     "https://drive.google.com/file/d/1NlAsX35brHUm1bXSreoYmBqfMOXZtc19/view?usp=sharing"))
-seis= pd.read_csv(get_url(
+seis = pd.read_csv(get_url(
     "https://drive.google.com/file/d/1ql96eHsSUgkQKqjRG3b34pOvU3RRP8jl/view?usp=sharing"))
-
-siete= pd.read_csv(get_url(
+siete = pd.read_csv(get_url(
     "https://drive.google.com/file/d/1U6wsJd52fUbwCLgiP30A_rlnNgBGQ67Y/view?usp=sharing"))
-
-ocho= pd.read_csv(get_url(
+ocho = pd.read_csv(get_url(
     "https://drive.google.com/file/d/1dJ47rDuEAxlDOYEw9NqSxIjcoyUduuP8/view?usp=sharing"))
 
 
-
-
+df_2 = pd.concat([uno, dos, tres, cuatro, cinco, seis, siete, ocho])
 
 
 df = pd.concat([hulu, amazon, disney, netflix])
@@ -97,7 +94,7 @@ async def get_max_duration(year: int = None, platform: str = None, duration_type
 # Cantidad de películas por plataforma con un puntaje mayor a XX en determinado año
 @ app.get("/get_score_count/")
 async def get_score_count(platform: str, scored: float, year: int):
-    df_2 = pd.concat([uno , dos , tres, cuatro , cinco , seis, siete, ocho])
+    # df_2 = pd.concat([uno , dos , tres, cuatro , cinco , seis, siete, ocho])
     # print(df_2)
     score = df_2.groupby("movieId")["rating"].mean().reset_index()
     new_df = pd.DataFrame(
