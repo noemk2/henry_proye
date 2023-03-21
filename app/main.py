@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 # from pathlib import Path
 import pandas as pd
-# import requests
-# from io import StringIO
+import requests
+from io import StringIO
 
 
 app = FastAPI()
@@ -11,8 +11,15 @@ app = FastAPI()
 
 def get_url(url):
     file_id = url.split('/')[-2]
-    dwn_url = 'https://drive.google.com/uc?id=' + file_id
-    return dwn_url
+    dwn_url = 'https://drive.google.com/uc?export=download&id=' + file_id
+    url2 = requests.get(dwn_url).text
+    csv_raw = StringIO(url2)
+    return csv_raw
+    # df = pd.read_csv(csv_raw)
+    # print(df.head())
+    # file_id = url.split('/')[-2]
+    # dwn_url = 'https://drive.google.com/uc?id=' + file_id
+    # return dwn_url
 
 
 hulu = pd.read_csv(get_url(
