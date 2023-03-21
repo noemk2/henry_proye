@@ -11,9 +11,9 @@ app = FastAPI()
 
 def get_url(url):
     # file_id = url.split('/')[-2]
-    file_id=url.split('/')[-2]
+    file_id = url.split('/')[-2]
     # dwn_url = 'https://drive.google.com/uc?export=download&id=' + file_id
-    dwn_url='https://drive.google.com/uc?id=' + file_id
+    dwn_url = 'https://drive.google.com/uc?id=' + file_id
     return dwn_url
     # url2 = requests.get(dwn_url).text
     # csv_raw = StringIO(url2)
@@ -33,7 +33,7 @@ platforms = {"hulu": hulu, "amazon": amazon,
              "disney": disney, "netflix": netflix}
 
 df_2 = pd.read_csv(get_url(
-    "https://drive.google.com/file/d/1imopu6fIPBtSUI8K-t_6MhI0sq9jvNe9/view?usp=sharing"))
+    "https://drive.google.com/file/d/178YqsxvZfu9Alsv0upqgdnxtUFnGNUGr/view?usp=sharing"))
 
 
 # uno = pd.read_csv(get_url(
